@@ -1,0 +1,88 @@
+\\ Exercice 1.1.1
+#include <stdio.h>
+
+int main() {
+    char matrix[5][5] = {
+        {'1','2','3','4,'5'},
+        {'7', 'a', 'c','8', 'd'},
+        {'c','9','4','z','8'},
+        {'5','p','m','-3','k'},
+        {'2','9','t','m','k'}
+    };
+
+    printf("Matrix:\n");
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            printf("%c ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+\\ 1.1.2
+
+printf("Even Index Rows:\n");
+    for (int i = 0; i < 5; i += 2) {
+        for (int j = 0; j < 5; j++) {
+            printf("%c ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+\\ 1.1.3
+printf("Odd Index Elements in Each Row:\n");
+    for (int i = 0; i < 5; i++) {
+        for (int j = 1; j < 5; j += 2) {
+            printf("%c ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+\\ 1.2
+
+printf("Main Diagonal:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%c ", matrix[i][i]);
+    }
+    printf("\n");
+
+    printf("Secondary Diagonal:\n");
+    for (int i = 0; i < 5;i++) {
+        printf("%c ", matrix[i][4 - i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+\\ Exercice 2
+
+#include <stdio.h>
+
+int main() {
+    int matrix[4][4] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
+    };
+
+    int n = 4
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < i; j++) {
+            int temp = matrix[i][j];
+            matrix[i][j] = matrix[j][i];
+            matrix[j][i] = temp;
+        }
+    }
+    printf("Transformed Matrix:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
